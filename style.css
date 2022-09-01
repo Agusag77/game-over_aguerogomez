@@ -1,0 +1,233 @@
+/* Header */
+
+header div .logo {
+    width: 9rem;
+    height: 8rem;
+    border-radius: 3px;
+}
+
+#log-link {
+    padding-right: 2rem;
+}
+
+header div .nav .nav-link {
+    color: white;
+}
+
+header div .nav .nav-link:hover {
+    color: rgb(154, 201, 199);
+    transition: 1s;
+}
+
+/* Log in */
+
+#loginModalLabel {
+    color: #2b2b22;
+}
+
+#loginModal .col-form-label {
+    color: black;
+    display: flex;
+}
+
+#login-box #toggle-btn-login {
+    position: absolute;
+    top: 148px;
+    right: 26px;
+    width: 34px;
+    height: 34px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-box #toggle-btn-login::before {
+    color: #2b2b22;
+    content: '\f06e';
+    font-family: fontAwesome;
+}
+
+#login-box #toggle-btn-login.hide-login::before {
+    color: #2b2b22;
+    content: '\f070';
+}
+
+/* Register */
+
+#btn-register {
+    margin-left: 1rem;
+}
+
+#registerModalLabel {
+    color: #2b2b22;
+}
+
+#registerModal .col-form-label {
+    color: black;
+    display: flex;
+}
+
+#input-box #toggle-btn {
+    position: absolute;
+    top: 240px;
+    right: 26px;
+    width: 34px;
+    height: 34px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#input-box #toggle-btn::before {
+    color: #2b2b22;
+    content: '\f06e';
+    font-family: fontAwesome;
+}
+
+#input-box #toggle-btn.hide::before {
+    color: #2b2b22;
+    content: '\f070';
+}
+
+#input-box-confirm #toggle-btn-confirm {
+    position: absolute;
+    top: 332px;
+    right: 26px;
+    width: 34px;
+    height: 34px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#input-box-confirm #toggle-btn-confirm::before {
+    color: #2b2b22;
+    content: '\f06e';
+    font-family: fontAwesome;
+}
+
+#input-box-confirm #toggle-btn-confirm.hide-confirm::before {
+    color: #2b2b22;
+    content: '\f070';
+}
+
+/* Cart */
+
+#cart-logo {
+    border: transparent;
+    padding: 0;
+    margin-left: 2rem;
+}
+
+#cart-logo .img-cart {
+    width: 39px;
+    height: 38px;
+}
+
+#cart-logo .img-cart:hover {
+    transform: rotate(-0.05turn);
+    transition-duration: 1s;
+}
+
+header div .boton-logo {
+    position: relative;
+    display: inline-block;
+}
+
+header div .count-product {
+    position: absolute;
+    top: -11px;
+    right: -8px;
+    background-color: #fff;
+    padding: 1px 6px;
+    border-radius: 50%;
+    color: red;
+    font-weight: 700;
+    font-family: system-ui;
+    line-height: 18px;
+}
+
+div .offcanvas {
+    color: #2b2b22;
+}
+
+#cart {
+    display: flex;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    justify-content: center;
+    gap: 2rem;
+}
+
+h3 {
+    display: inline;
+}
+
+#card-cart {
+    width: 15rem;
+    height: 15rem;
+    color: #2b2b22;
+}
+
+#img-cart {
+    width: 5rem;
+    height: 4rem;
+}
+
+/* Main */
+
+#background {
+    background-image: linear-gradient(135deg, #e6efc3 0%, #c3cfe2 100%);
+}
+
+#background .row {
+    --bs-gutter-x: 0rem;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+#catalogo {
+    display: flex;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#catalogo .card {
+    width: 23rem;
+    padding: 0;
+    
+}
+
+#img-catalogo {
+    height: 24rem;
+    padding-bottom: 1rem;
+}
+
+/* Inicio footer */
+
+footer {
+    padding-right: 4rem;
+    padding-left: 4rem;
+    background-color: RGBA(33,37,41,var(--bs-bg-opacity,1));
+}
+
+footer .logo {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 3px;
+}

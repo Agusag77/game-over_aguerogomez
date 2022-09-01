@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wolf Games</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+<!-- Inicio del header -->    
+    <header class="p-3 text-bg-dark">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a id="log-link" href="./index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <img class="logo" src="./images/logo-sitio.gif" alt="logo game over">
+            </a>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="./index.html" class="nav-link px-2">Home</a></li>
+                <li><a href="#" class="nav-link px-2">Ps5 Games</a></li>
+                <li><a href="#" class="nav-link px-2">Xbox Games</a></li> 
+                <li><a href="#" class="nav-link px-2">About</a></li>
+            </ul>
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+            </form>
+            <!-- Boton login y modal -->
+            <div class="text-end">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-whatever="usuario">Login</button>
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                               <h5 class="modal-title" id="loginModalLabel">Ingrese el usuario</h5>
+                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="user-name" class="col-form-label">Usuario:</label>
+                                        <input type="text" class="form-control" id="user-name" placeholder="Usuario" >
+                                    </div>
+                                    <div id="login-box" class="mb-3">
+                                        <label for="password" class="col-form-label">Contraseña:</label>
+                                        <input type="password" class="form-control" id="password" placeholder="Password">
+                                        <span id="toggle-btn-login"></span>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <button id="login-btn" type="button" class="btn btn-primary">Ingresar</button>
+                                    </div>    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Boton register y modal -->
+            <button id="btn-register" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button> 
+            <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                           <h5 class="modal-title" id="registerModalLabel">Crea tu cuenta Game Over</h5>
+                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="register">                            
+                            <form>
+                                <div class="mb-3">
+                                    <label for="user-name" class="col-form-label">Usuario:</label>
+                                    <input type="text" class="form-control" id="user-name-resgister" placeholder="Usuario" >
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="col-form-label">Correo electrónico:</label>
+                                    <input type="text" class="form-control" id="email" placeholder="Correo electrónico" >
+                                </div>
+                                <div id="input-box" class="mb-3">
+                                    <label for="password" class="col-form-label">Contraseña:</label>
+                                    <input type="password" class="form-control" id="pswrd" placeholder="Password">
+                                    <span id="toggle-btn"></span>
+                                </div>
+                                <div id="input-box-confirm" class="mb-3">
+                                    <label for="password" class="col-form-label">Confirma tu contraseña:</label>
+                                    <input type="password" class="form-control" id="pswrd-confirm" placeholder="Password">
+                                    <span id="toggle-btn-confirm"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button id="register" type="button" class="btn btn-primary" value="register">Registrarse</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- Inicio carrtio -->
+            <div class="boton-logo">
+            <button id="cart-logo" class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="#offcanvasWithBothOptions">
+            <img class="img-cart" src="./images/cart-icon.png"></img>
+            <p class="count-product">0</p>
+            </button>
+            </div> 
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                  <h2 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Juegos Adquiridos</h2>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <div> 
+                    <h3>Total: U$S</h3> 
+                    <h3 id="precioTotal"></h3>
+                    <div id="carrito" class="row"></div>
+                  </div>
+                </div>
+            </div> 
+        </div>
+    </header>
+<!-- Iinicio del main -->    
+    <main id="background">
+        <h1>Destacados</h1>
+        <div id="catalogo" class="row">
+        </div>   
+    </main>
+<!-- Inicio del footer -->   
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
+        <p class="col-md-4 mb-0 text-muted">© 2022 Wolf Games Inc.</p>
+        <a href="./index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <img class="logo" src="./images/logo-sitio.gif" alt="logo game over">
+        </a>
+        <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        </ul>
+    </footer>
+    <script src="./catalogo.js"></script>
+    <script src="./register.js"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+</html>
