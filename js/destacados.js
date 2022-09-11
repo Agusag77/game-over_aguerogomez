@@ -1,3 +1,5 @@
+/* Declaro un array con los juegos */
+
 const juegos = [
   {
     id: 1,
@@ -57,13 +59,14 @@ const juegos = [
   }, 
 ];
 
+
 let contadorCart = 0;
 let amountProduct = document.querySelector('.count-product');
 let countProduct = 0;
 
 
 const juegoCatalogoHTML = (juego) => {
-    return`
+  return`
     <div class="card">
         <div class="card-body">
           <img id="img-catalogo"src=${juego.img} class="card-img-top">
@@ -75,7 +78,7 @@ const juegoCatalogoHTML = (juego) => {
 };
 
 const juegoCartHTML = (juego) => {
-    return` 
+  return` 
     <div id="card-cart" class="card">
       <div class="card-body">
           <img id="img-cart"src=${juego.img} class="card-img-top">
@@ -175,6 +178,7 @@ const botonesCart = () => {
       amountProduct.innerHTML = countProduct; 
       renderCart();
       localStorage.removeItem("carrito");
+      con
     });
   }
 };
@@ -186,3 +190,20 @@ renderCatalogo();
 const cart = JSON.parse(localStorage.getItem("carrito")) || [];
 
 renderCart();
+
+/* Utilizo operador ternario para mostrar si el LS esta vacio o lleno. En base a eso muestro un mensaje o los elementos del arreglo */
+
+cart != 0 
+? console.log(cart) : console.log("El localStorage está vacío.");
+
+
+/* Desestructuracion del array "juegos" */
+
+// const [a, , , , , b] = juegos;
+
+// console.log(a);
+// console.log(b);
+
+/* Spread del array */
+
+// console.log(...juegos);

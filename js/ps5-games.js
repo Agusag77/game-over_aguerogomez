@@ -3,62 +3,61 @@
 const juegos = [
   {
     id: 1,
-    img: './images/fifa23.webp',  
-    nombre: 'Fifa 23',
-    precio: 12000,
-    info: 'FIFA 23 lleva el Juego del mundo al campo con la tecnología HyperMotion 2, queofrece una experiencia de juego aún más realista, la Copa del Mundo FIFA™ masculina yfemenina, los equipos femeninos de clubes, las funciones de juego multiplataforma y muchomás.'
+    img: '../images/spiderman.webp',  
+    nombre: 'Spider-Man: Miles Morales',
+    precio: 7400,
+    info: 'Spider-Man: Miles Morales es un videojuego de acción y aventuras desarrollado por Insomniac Games y publicado por Sony Interactive Entertainment para PlayStation 4 y PlayStation 5. Está basado en el superhéroe de Marvel Comics Miles Morales.'
   },
   {
     id: 2,
-    img: './images/cod-mw2.jpeg',
-    nombre: 'Call of Duty - Modern Warfare 2',
-    precio: 8000,
-    info: 'Call of Duty: Modern Warfare 2​ ​​es un videojuego de acción en primera personadesarrollado por Infinity Ward. Es la sexta entrega de la serie Call of Duty y sucesoradirecta de Modern Warfare, cuarto de la serie.'
+    img: '../images/gt7.jpeg',
+    nombre: 'Gran Turismo 7',
+    precio: 8500,
+    info: 'Gran Turismo 7 es un videojuego de simulación de carreras de 2022 desarrollado por Polyphony Digital y publicado por Sony Interactive Entertainment. El juego es la octava entrega principal de la serie Gran Turismo.'
   },
   {
     id: 3,
-    img: './images/nfl23.jpeg',
-    nombre: 'NFL 23',
-    precio: 6900,
-    info: 'Madden NFL 23 es un próximo videojuego de fútbol americano basado en la LigaNacional de Fútbol, ​​desarrollado por EA Tiburon y publicado por Electronic Arts.'
+    img: '../images/godofwar.jpeg',
+    nombre: 'God of War: Ragnarök',
+    precio: 9900,
+    info: 'God of War: Ragnarök es un próximo juego de acción y aventuras en desarrollo por Santa Monica Studio y que será publicado por Sony Interactive Entertainment. Su lanzamiento está programado para el 9 de noviembre del 2022 para PlayStation 4 y PlayStation 5.​ Será la 9.ª entrega de la saga de God of War.'
   },
   {
     id: 4,
-    img: './images/apex.webp',
-    nombre: 'Apex Legends - Champion Edition',
-    precio: 5000,
-    info: 'Apex Legends es un videojuego gratuito perteneciente a los géneros battle royale yhero shooter en primera persona, desarrollado por Respawn Entertainment y publicado porElectronic Arts.'
+    img: '../images/returnal.jpeg',
+    nombre: 'Returnal',
+    precio: 5800,
+    info: 'Returnal es un videojuego de disparos en tercera persona roguelike, desarrollado por Housemarque y publicado por Sony Interactive Entertainment. Se estrenó exclusivamente para la consola PlayStation 5 el 30 de abril de 2021.'
   },
   {
     id: 5,
-    img: './images/battlefield-2042.jpeg',
-    nombre: 'Battlefield 2042',
-    precio: 7000,
-    info: 'Battlefield 2042 es un videojuego de disparos y acción bélica en primera persona, desarrollado por EA Digital Illusion CE, Criterion Games, Ripple Effect y distribuido por Electronic Arts.​'
+    img: '../images/stray.jpeg',
+    nombre: 'Stray',
+    precio: 7600,
+    info: 'Stray es un juego de aventuras desarrollado por BlueTwelve Studio y publicado por Annapurna Interactive. Anteriormente conocido como HK_Project, el juego fue lanzado el 19 de julio de 2022 para Microsoft Windows, PlayStation 4 y PlayStation 5.​'
   },
   {
     id: 6,
-    img: './images/masseffect-lgedition.jpeg',
-    nombre: 'Mass Effect - Legendary',
-    precio: 5000,
-    info: 'Mass Effect es una franquicia de medios de ciencia ficción militar creada por Casey Hudson, Drew Karpyshyn y Preston Watamaniuk.'
+    img: '../images/elden.jpeg',
+    nombre: 'Elden Ring',
+    precio: 6300,
+    info: 'Elden Ring es un videojuego de rol de acción desarrollado por FromSoftware y publicado por Bandai Namco Entertainment. El videojuego surge de una colaboración entre el director y diseñador Hidetaka Miyazaki y el novelista de fantasía George R. R. Martin.'
   },
   {
     id: 7,
-    img: './images/star-wars.jpg',
-    nombre: 'Star Wars Jedi: Fallen Order',
-    precio: 3500,
-    info: 'Star Wars Jedi: Fallen Order es un videojuego de acción y aventura para un solo jugador desarrollado por Respawn Entertainment y publicado por Electronic Arts, ambientado en el universo de Star Wars. La trama se sitúa entre el Episodio lll: La Venganza de los Sith y el Episodio lV: Una Nueva Esperanza.'
+    img: '../images/horizon.jpeg',
+    nombre: 'Horizon Forbidden West',
+    precio: 8800,
+    info: 'Horizon Forbidden West es un videojuego de rol de acción, aventura y mundo abierto desarrollado por Guerrilla Games y distribuido por Sony Interactive Entertainment, exclusivamente para PlayStation 4 y PlayStation 5. Es la secuela de Horizon Zero Dawn.'
   },
   {
     id: 8,
-    img: './images/plantsvszombies.jpg',
-    nombre: 'Plants vs. Zombies: La batalla de Neighborville',
-    precio: 2500,
-    info: 'Plants vs. Zombies: La batalla de Neighborville es un videojuego de disparos en tercera persona desarrollado por PopCap Games y publicado por Electronic Arts para Microsoft Windows, PlayStation 4, Xbox One y Nintendo Switch. Es la tercera entrega de la serie de videojuegos Plants vs. Zombies: Garden Warfare.'
+    img: '../images/nba2k23.jpeg',
+    nombre: 'NBA 2K23',
+    precio: 9500,
+    info: 'NBA 2K23 es un videojuego de deportes y baloncesto a cargo de Visual Concepts y 2K Sports para PC, PlayStation 4, Xbox One, PlayStation 5, Xbox Series y Switch.'
   }, 
 ];
-
 
 let contadorCart = 0;
 let amountProduct = document.querySelector('.count-product');
@@ -66,7 +65,7 @@ let countProduct = 0;
 
 
 const juegoCatalogoHTML = (juego) => {
-  return`
+    return`
     <div class="card">
         <div class="card-body">
           <img id="img-catalogo"src=${juego.img} class="card-img-top">
@@ -78,7 +77,7 @@ const juegoCatalogoHTML = (juego) => {
 };
 
 const juegoCartHTML = (juego) => {
-  return` 
+    return` 
     <div id="card-cart" class="card">
       <div class="card-body">
           <img id="img-cart"src=${juego.img} class="card-img-top">
@@ -189,20 +188,3 @@ renderCatalogo();
 const cart = JSON.parse(localStorage.getItem("carrito")) || [];
 
 renderCart();
-
-/* Utilizo operador ternario para mostrar si el LS esta vacio o lleno. En base a eso muestro un mensaje o los elementos del arreglo */
-
-cart != 0 
-? console.log(cart) : console.log("El localStorage está vacío.");
-
-
-/* Desestructuracion del array "juegos" */
-
-const [a, , , , , b] = juegos;
-
-console.log(a);
-console.log(b);
-
-/* Spread del array */
-
-console.log(...juegos);
