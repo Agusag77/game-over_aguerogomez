@@ -8,7 +8,7 @@ let response = fetch('https://api.mercadolibre.com/sites/MLA/search?limit=6&q=ps
       const psPlus = {
         nombre: sub.title,
         precio: sub.price,
-        img: "/images/ps-plus.gif",
+        img: "../images/ps-plus.gif",
         id: sub.id,
       };
       return psPlus
