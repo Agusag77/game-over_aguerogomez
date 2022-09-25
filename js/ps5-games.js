@@ -3,7 +3,7 @@
 const juegos = [
   {
     id: 9,
-    img: './images/spiderman.webp',  
+    img: '../images/spiderman.webp',  
     nombre: 'Spider-Man: Miles Morales',
     precio: 7400,
     info: 'Spider-Man: Miles Morales es un videojuego de acción y aventuras desarrollado por Insomniac Games y publicado por Sony Interactive Entertainment para PlayStation 4 y PlayStation 5. Está basado en el superhéroe de Marvel Comics Miles Morales.'

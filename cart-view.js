@@ -9,7 +9,6 @@ const botonVaciar = document.getElementById("vaciar-carrito")
 const juegoCartHTML = (juego) => {
   return` 
     <tr>
-      <th scope="row"><img id="img-cart"src=${juego.img}></th>
       <td>${juego.nombre}</td>
       <td>$${juego.precio}</td>
       <td id="cantidad">${juego.cantidad}</td> 
