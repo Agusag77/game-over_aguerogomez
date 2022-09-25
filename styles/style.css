@@ -1,3 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+body {
+    background-image: url(../images/fondo.jpeg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    background-attachment: fixed;
+}   
+
 /* Header */
 
 header div .logo {
@@ -12,6 +23,7 @@ header div .logo {
 
 header div .nav .nav-link {
     color: white;
+    font-size: 17px;
 }
 
 header div .nav .nav-link:hover {
@@ -21,8 +33,14 @@ header div .nav .nav-link:hover {
 
 /* Log in */
 
+#loginModal .modal-content{
+    background-image: url(../images/background-cards.jpeg);
+    background-size: cover;
+}
+
 #loginModalLabel {
     color: #2b2b22;
+    
 }
 
 #loginModal .col-form-label {
@@ -56,6 +74,11 @@ header div .nav .nav-link:hover {
 }
 
 /* Register */
+
+#registerModal .modal-content {
+    background-image: url(../images/background-cards.jpeg);
+    background-size: cover;
+}
 
 #btn-register {
     margin-left: 1rem;
@@ -120,7 +143,7 @@ header div .nav .nav-link:hover {
     content: '\f070';
 }
 
-/* Cart */
+/* Carrito */
 
 #cart-logo {
     border: transparent;
@@ -143,7 +166,7 @@ header div .boton-logo {
     display: inline-block;
 }
 
-header div .count-product {
+#contador-carrito {
     position: absolute;
     top: -11px;
     right: -8px;
@@ -157,25 +180,21 @@ header div .count-product {
 }
 
 div .offcanvas {
-    color: #2b2b22;
-}
-
-#cart {
-    display: flex;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    justify-content: center;
-    gap: 2rem;
+    color: rgba(255, 255, 255, 0.812);
+    background-image: url(../images/fondo-carrito.jpeg);
+    background-size: cover;
 }
 
 h3 {
     display: inline;
 }
 
-#card-cart {
-    width: 15rem;
-    height: 17rem;
-    color: #2b2b22;
+div .table {
+    margin-top: 1rem;
+}
+
+td {
+    text-align: center;
 }
 
 #img-cart {
@@ -185,18 +204,38 @@ h3 {
 
 /* Main */
 
-#background {
-    background-image: linear-gradient(135deg, #e6efc3 0%, #c3cfe2 100%);
-}
-
 #background .row {
     --bs-gutter-x: 0rem;
 }
 
 h1 {
+    color: azure;
     display: flex;
     justify-content: center;
     padding-top: 2rem;
+    text-decoration-line: underline;
+}    
+
+h2 {
+    color: azure;
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem; 
+    text-decoration-line: underline;
+}
+
+#carrusel {
+    padding-top: 2rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+#carrusel .carousel-inner {
+    height: 80vh;
+}
+
+#carrusel .carousel-inner .carousel-item img {
+    height: 80vh;
 }
 
 #catalogo {
@@ -210,8 +249,49 @@ h1 {
 #catalogo .card {
     width: 23rem;
     padding: 0;
-    
+    background-image: url(../images/background-cards.jpeg);
+    background-size: cover;
 }
+
+#video {
+    height: 25rem;
+}
+
+#video1 {
+    height: 25rem;
+}
+
+#video2 {
+    height: 25rem;
+}
+
+#catalogo .card iframe {
+    width: 100%;
+    height: 63%;
+}
+
+#catalogo .card .card-text {
+    backdrop-filter: blur(5px);
+    color: #2b2b22;
+}
+
+#video div p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: justify;
+}    
+
+#video1 div p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: justify;
+} 
+
+#video2 div p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: justify;
+}    
 
 #img-catalogo {
     height: 24rem;

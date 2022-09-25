@@ -60,10 +60,12 @@ const juegos = [
 ];
 
 
-let contadorCart = 0;
-let amountProduct = document.querySelector('.count-product');
-let countProduct = 0;
+let contadorCart = 1;
+const contadorCarrito = document.getElementById("contador-carrito")
+const botonVaciar = document.getElementById("vaciar-carrito")
 
+
+/* Declaro catalogo y carrito de juegos a instertarse en el DOM */
 
 const juegoCatalogoHTML = (juego) => {
   return`
@@ -79,14 +81,14 @@ const juegoCatalogoHTML = (juego) => {
 
 const juegoCartHTML = (juego) => {
   return` 
-    <div id="card-cart" class="card">
-      <div class="card-body">
-          <img id="img-cart"src=${juego.img} class="card-img-top">
-          <h5 class="card-title">${juego.nombre}</h5>
-          <p class="card-text"> Precio: $ ${juego.precio}</p>
-          <button id="btn-cart-${juego.idCompra}" class="btn btn-danger">Delete</button>
-      </div>
-    </div>`;
+    <tr>
+        <th scope="row"><img id="img-cart"src=${juego.img}></th>
+        <td>${juego.nombre}</td>
+        <td>$${juego.precio}</td>
+        <td id="cantidad">${juego.cantidad}</td> 
+        <td><button id="btn-cart-${juego.idCompra}" class="btn btn-danger">X</button></td>
+    </tr>
+  `;
 };
 
 /* Renderizado del catalogo de juegos */   
@@ -111,11 +113,14 @@ const renderCart = () => {
   
   let cartHTML = "";
   let precio = 0;
+  let cantidad = 0
   for (const juego of cart) {
     cartHTML += juegoCartHTML(juego);
     precio += juego.precio;
+    cantidad += juego.cantidad
   }
-   
+
+  contadorCarrito.innerHTML = cantidad
   precioNodo.innerHTML = precio;
   cartNodo.innerHTML = cartHTML;
   botonesCart(); 
@@ -132,11 +137,36 @@ const botonesCatalogo = () => {
     botonNodo.addEventListener("click", () => {
       const juegosCart = {
         nombre: juego.nombre,
-        info: juego.info,
+        id: juego.id,
         idCompra: contadorCart,
         img: juego.img,
         precio: juego.precio,
+        cantidad: 1
+        
       };
+
+      const existe = cart.some(juego => juego.id == juegosCart.id);
+      if (existe){
+        const juegos = cart.map (juego => {
+          if (juego.id == juegosCart.id){
+              juego.cantidad++;
+              juego.precio = juego.precio + juegosCart.precio * juegosCart.cantidad
+              return juego;
+          }else{
+          return juego;
+        } 
+      })
+      console.log(juegos)
+      renderCart();
+      localStorage.setItem("carrito", JSON.stringify(cart));
+      Toastify({
+        text: "Juego agregado al carrito!",
+        offset: {
+          x: 50, 
+          y: 10
+        },
+      }).showToast();
+      } else {
       Toastify({
         text: "Juego agregado al carrito!",
         offset: {
@@ -145,11 +175,10 @@ const botonesCatalogo = () => {
         },
       }).showToast();
       contadorCart += 1;
-      countProduct++;
-      amountProduct.innerHTML = countProduct;
       cart.push(juegosCart);
       renderCart();
       localStorage.setItem("carrito", JSON.stringify(cart));
+      }
     });
   }
 };
@@ -174,20 +203,34 @@ const botonesCart = () => {
           y: 10
         },
       }).showToast();
-      countProduct--;
-      amountProduct.innerHTML = countProduct; 
       renderCart();
-      localStorage.removeItem("carrito");
+      let id = juego.id
+      borrarJuego(id)
     });
   }
 };
+
+/* Declaro una funcion para eliminar individualmente los juegos del carrito */
+function borrarJuego(id){
+  let carritoArray = JSON.parse(localStorage.getItem("carrito"))
+  let carritoIndexInArray = carritoArray.findIndex(e => e.id === id)
+  carritoArray.splice(carritoIndexInArray,1)
+  let carritoArrayJSON = JSON.stringify(carritoArray);
+  localStorage.setItem("carrito", carritoArrayJSON)
+}
+
+/* Inserto funcionalidad al boton de vaciado del carrito */
+botonVaciar.addEventListener('click', () => {
+  cart.length = 0
+  renderCart();
+  localStorage.removeItem("carrito"); 
+});
 
 renderCatalogo();
 
 /* Recupero la informacion del localStorage y valido si el carrito tiene items para presentarlos nuevamente en la web. Para esto utilizo el operador logico OR */
 
 const cart = JSON.parse(localStorage.getItem("carrito")) || [];
-
 renderCart();
 
 /* Utilizo operador ternario para mostrar si el LS esta vacio o lleno. En base a eso muestro un mensaje o los elementos del arreglo */
@@ -196,13 +239,3 @@ cart != 0
 ? console.log(cart) : console.log("El localStorage está vacío.");
 
 
-/* Desestructuracion del array "juegos" */
-
-// const [a, , , , , b] = juegos;
-
-// console.log(a);
-// console.log(b);
-
-/* Spread del array */
-
-// console.log(...juegos);
